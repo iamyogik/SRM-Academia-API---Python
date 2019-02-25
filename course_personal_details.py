@@ -22,14 +22,17 @@ def getCookieFromToken(token):
 
 def get_CourseDetails(index, element):
     CourseCode = pq(element).find("td").eq(0).text()
+    if CourseCode in CourseDetails:
+        CourseCode += '_LAB'
     CourseDetails[CourseCode] = {"CourseCode": pq(element).find("td").eq(0).text(),
                           "CourseTitle": pq(element).find("td").eq(1).text(),
-                          "RegnType": pq(element).find("td").eq(2).text(),
-                          "Category": pq(element).find("td").eq(3).text(),
-                          "CourseType": pq(element).find("td").eq(4).text(),
-                          "FacultyName": pq(element).find("td").eq(5).text(),
-                          "Slot": pq(element).find("td").eq(6).text(),
-                          "RoomNo": pq(element).find("td").eq(7).text() }
+                          "Credit": pq(element).find("td").eq(2).text(),
+                          "RegnType": pq(element).find("td").eq(3).text(),
+                          "Category": pq(element).find("td").eq(4).text(),
+                          "CourseType": pq(element).find("td").eq(5).text(),
+                          "FacultyName": pq(element).find("td").eq(6).text(),
+                          "Slot": pq(element).find("td").eq(7).text(),
+                          "RoomNo": pq(element).find("td").eq(8).text() }
 
 
 
